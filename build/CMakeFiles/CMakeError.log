@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/lyuheng/code/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c31ea/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c31ea.dir/build.make CMakeFiles/cmTC_c31ea.dir/build
+make[1]: Entering directory '/home/lyuheng/code/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c31ea.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_c31ea.dir/CheckSymbolExists.c.o   -c /home/lyuheng/code/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_c31ea
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c31ea.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_c31ea.dir/CheckSymbolExists.c.o  -o cmTC_c31ea 
+CMakeFiles/cmTC_c31ea.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c31ea.dir/build.make:97: recipe for target 'cmTC_c31ea' failed
+make[1]: *** [cmTC_c31ea] Error 1
+make[1]: Leaving directory '/home/lyuheng/code/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c31ea/fast' failed
+make: *** [cmTC_c31ea/fast] Error 2
+
+File /home/lyuheng/code/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/lyuheng/code/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bee22/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bee22.dir/build.make CMakeFiles/cmTC_bee22.dir/build
+make[1]: Entering directory '/home/lyuheng/code/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bee22.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_bee22.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_bee22
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bee22.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_bee22.dir/CheckFunctionExists.c.o  -o cmTC_bee22 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_bee22.dir/build.make:97: recipe for target 'cmTC_bee22' failed
+make[1]: *** [cmTC_bee22] Error 1
+make[1]: Leaving directory '/home/lyuheng/code/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_bee22/fast' failed
+make: *** [cmTC_bee22/fast] Error 2
+
+
